@@ -57,7 +57,49 @@
             </div>
         </div>
     <div class = "container">
-            ADD HERE
+            Agarwal, Shivangi: 010174385
+
+This project follows the MVC architecture with MenuModel class as the model component, MenuController class as the 
+controller component, and MenuGUI class as the view component. This architecture manages the orders. (write the relationships
+between them from notebook and make the diagram)
+The credit cards are managed by a super class CreditCard with subclasses of different types of cards. This is an extensible
+form of pattern, because to add a new form a payment, the coder will have to add a new subclass and extend CreditCard class.
+
+Pros of this architecture: This kind of architecture is good, because this makes sure that the user doesn't directly manipulate
+the model. The user makes changes in the view, and to make that change in the model, the command has to go through the 
+controller. Also, if a new frame is needed, it can be fitted in without making many changes to the pattern. View and controller
+are pluggable. 
+
+Cons: The complexity of the application making increases. Making connections between view and controller can be hard. Loose
+coupling is usually preferred, but in this there is close coupling of view and controller to the model.
+
+Short description of classes:
+MenuController: This class communicates between the model and view components. It uses the input file of menu to render the 
+menu buttons. The view component sends a request according to which this class manipulates the model component.
+
+MenuGUI: This class is the GUI of the project. The user interacts with this class to make an order. This class sends requests 
+or actions according to the user to the controller class to make changes to the model. This class actually (indirectly through
+controller) displays the model. This class also uses CreditCard subclasses to validate the transaction. 
+
+MenuModel: This class is the model component. This class manages the items and their prices. 
+
+CreditCard: This is a super class that generalizes all the payment cards. It takes in a number and the type of the card.
+All payment card classes extend this class. This is a way of making the design extensible.
+
+AmericanExpress: This is a payment card class that extends CreditCard class. According to the specifications of this card, 
+it validates the card.   
+
+Discover: This is a payment card class that extends CreditCard class. According to the specifications of this card, 
+it validates the card. 
+
+Master: This is a payment card class that extends CreditCard class. According to the specifications of this card, 
+it validates the card. 
+
+Visa: This is a payment card class that extends CreditCard class. According to the specifications of this card, 
+it validates the card. 
+
+
+
             <br> <br><a class="btn btn-primary" href="index3.html"> <span class="glyphicon glyphicon-chevron-left"></span>Back</a>
                </div>
         <!-- /.container -->
