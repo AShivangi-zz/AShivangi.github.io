@@ -57,9 +57,31 @@
             </div>
         </div>
     <div class = "container">
-            ADD HERE
+            The WebLoader program loads a list url strings from a file, and when one of the Fetch buttons is clicked, it forks off one or more threads to download the HTML for each url. A Stop button can kill off the downloading threads if desired. A progress bar and some other status fields show the progress of the downloads -> the number of worker threads that have completed their run, the number of threads currently running, and (when done running) the elapsed time.
+<br><br>
+There are two main classes that make up the WebLoader program:
+<br><br>
+WebFrame - The WebFrame contains the GUI, keeps pointers to the main elements, and manages the overall program flow.
+<br><br>
+WebWorker - WebWorker is a subclass of Thread that downloads the content for one url. The "Fetch" buttons ultimately fork off a few WebWorkers.
+<br><br>
+A semaphore is used to limit the number of workers fetching at a time.<br><br>
+<img src="images\webloader_init.png" width="45%" height="45%" > 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="images\webloader_inprog.png" width="45%" height="45%" >
+<br>
+<center><h3>Initial web loader &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Web Loader in Progress</h3></center><br><br>
+
+<img src="images\webloader_single.png" width="45%" height="45%" > 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="images\webloader_done.png" width="45%" height="45%" >
+<br>
+<center><h3>Web Loader using single thread &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;Web Loader after loading all the pages</h3></center>
+
             <br> <br><a class="btn btn-primary" href="index2.html"> <span class="glyphicon glyphicon-chevron-left"></span>Back</a>
+            <br><br><br>
                </div>
+
         <!-- /.container -->
     </nav> 
     </body>
